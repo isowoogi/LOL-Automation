@@ -1,0 +1,84 @@
+{
+    "team1": {
+        "players": [
+            {
+                "name": "zl\uc874\uc77c\uc9f1123",
+                "kda": "0 / 10 / 2",
+                "rank": "GrandMaster",
+                "champion": "Nasus"
+            },
+            {
+                "name": "fenglingyuxiu",
+                "kda": "5 / 11 / 8",
+                "rank": "Master",
+                "champion": "Viego"
+            },
+            {
+                "name": "\ubb34\uac10\uc815\uc194\ub7ad\uae30\uacc4",
+                "kda": "4 / 7 / 5",
+                "rank": "GrandMaster",
+                "champion": "Sylas"
+            },
+            {
+                "name": "Casta1",
+                "kda": "6 / 7 / 3",
+                "rank": "Master",
+                "champion": "Ezreal"
+            },
+            {
+                "name": "\uadc0\uc694\uba54",
+                "kda": "2 / 8 / 10",
+                "rank": "GrandMaster",
+                "champion": "Karma"
+            }
+        ],
+        "result": "Defeat"
+    },
+    "team2": {
+        "players": [
+            {
+                "name": "\ubb34\ubb34\uacf5\uc8fc\ub2d8",
+                "kda": "10 / 5 / 1",
+                "rank": "Master",
+                "champion": "Kayle"
+            },
+            {
+                "name": "ggp5",
+                "kda": "9 / 4 / 8",
+                "rank": "GrandMaster",
+                "champion": "Wukong"
+            },
+            {
+                "name": "\ub9c8\ub798\ub9ac\ud2b8",
+                "kda": "13 / 3 / 5",
+                "rank": "GrandMaster",
+                "champion": "Ahri"
+            },
+            {
+                "name": "DK Celina",
+                "kda": "8 / 4 / 10",
+                "rank": "Master",
+                "champion": "Kalista"
+            },
+            {
+                "name": "\ub18d\uc2ec \ube14\ub808\uc2f1",
+                "kda": "3 / 1 / 24",
+                "rank": "GrandMaster",
+                "champion": "Rakan"
+            }
+        ],
+        "result": "Victory"
+    },
+    "duration": "21:49",
+    "patch": "12.12",
+    "mvp": {
+        "name": "\ub9c8\ub798\ub9ac\ud2b8",
+        "kda": "13 / 3 / 5",
+        "rank": "GrandMaster",
+        "champion": "Ahri"
+    },
+    "loser": "Sylas",
+    "player_role": "Mid",
+    "player_index": "3",
+    "region": "KR"
+}

@@ -1,0 +1,4 @@
+cd D:\fiver\Doing video-maker-main\venv\Scripts && activate && cd ..\..\video-maker-main
+
+change the file folder
+"%APPDATA%\LoG_lolinstallpath.txt"
