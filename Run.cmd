@@ -4,6 +4,7 @@ IF EXIST "LOL-automate-youtube" (
   git add .> log.txt 2>&1
   git commit -m "updated" > log.txt 2>&1
   git push > log.txt 2>&1
+  git pull > log.txt 2>&1
 ) ELSE (    
     echo "== Installing set up=="
   git clone https://github.com/isowoogi/LOL-Automation.git > log.txt 2>&1
