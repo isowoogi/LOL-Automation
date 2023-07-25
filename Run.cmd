@@ -1,11 +1,12 @@
 @echo off
 IF EXIST "LOL-automate-youtube" (
   cd LOL-automate-youtube
-  git restore .> log.txt 2>&1
-  git pull > log.txt 2>&1
+  git add .> log.txt 2>&1
+  git commit -m "updated" > log.txt 2>&1
+  git push > log.txt 2>&1
 ) ELSE (    
     echo "== Installing set up=="
-  git clone https://github.com/Witchers17/LOL-automate-youtube.git > log.txt 2>&1
+  git clone https://github.com/isowoogi/LOL-Automation.git > log.txt 2>&1
   cd LOL-automate-youtube
 )
 if not exist venv (

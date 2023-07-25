@@ -10,7 +10,7 @@ class DataScrapper:
         self.__download_path = os.path.abspath(r'.\media\replays')
         # SELENIUM
         self.__options = Options()
-        self.__options.headless = True
+        # self.__options.headless = True
         self.__options.set_preference(
             'browser.download.dir', self.__download_path)
         self.__options.set_preference("browser.download.folderList", 2)
