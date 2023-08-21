@@ -74,7 +74,7 @@ class CreateThumbnail:
         elif (name == "TwistedFate"):
             return "Twisted-fate"
         elif (name == "LeeSin"):
-            return "lee-sin"
+            return "LeeSin"
         elif (name == "RekSai"):
             return "RekSai"
         elif (name == "Wukong"):
