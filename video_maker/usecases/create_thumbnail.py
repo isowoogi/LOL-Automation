@@ -29,6 +29,8 @@ class CreateThumbnail:
         #     return "MonkeyKing"
         if(name == "AurelionSol"):
             return "aurelion-sol"
+        elif (name == "XinZhao"):
+            return "Xin-Zhao"
         elif (name == "KaiSa"):
             return "Kai-sa"
         elif (name == "VelKoz"):
@@ -61,6 +63,8 @@ class CreateThumbnail:
     def iconReplace(self, name):
         if (name == "KaiSa"):
             return "Kaisa"
+        elif (name == "XinZhao"):
+            return "Xin-Zhao"
         elif (name == "VelKoz"):
             return "Velkoz"
         elif (name == "KhaZix"):
