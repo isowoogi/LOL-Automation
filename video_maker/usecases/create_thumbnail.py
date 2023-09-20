@@ -29,8 +29,6 @@ class CreateThumbnail:
         #     return "MonkeyKing"
         if(name == "AurelionSol"):
             return "aurelion-sol"
-        elif (name == "XinZhao"):
-            return "Xin-Zhao"
         elif (name == "KaiSa"):
             return "Kai-sa"
         elif (name == "VelKoz"):
@@ -40,7 +38,7 @@ class CreateThumbnail:
         elif (name == "NunuWillump"):
             return "Nunu"
         elif (name == "BelVeth"):
-            return "Bel-veth"
+            return "Belveth"
         elif (name == "RenataGlasc"):
             return "Renata"
         elif (name == "TwistedFate"):
@@ -57,14 +55,16 @@ class CreateThumbnail:
             return "jarvan-iv"
         elif (name == "MasterYi"):
             return "Master-yi"
+        elif (name == "Dr.Mundo"):
+            return "dr-mundo"
+        elif (name == "Dr.Mundo"):
+            return "dr-mundo"
         else:
             return name
 
     def iconReplace(self, name):
         if (name == "KaiSa"):
             return "Kaisa"
-        elif (name == "XinZhao"):
-            return "Xin-Zhao"
         elif (name == "VelKoz"):
             return "Velkoz"
         elif (name == "KhaZix"):
@@ -75,14 +75,12 @@ class CreateThumbnail:
             return "Belveth"
         elif (name == "RenataGlasc"):
             return "Renata"
-        elif (name == "TwistedFate"):
-            return "Twisted-fate"
-        elif (name == "LeeSin"):
-            return "LeeSin"
         elif (name == "RekSai"):
             return "RekSai"
         elif (name == "Wukong"):
             return "MonkeyKing"
+        elif (name == "Dr.Mundo"):
+            return "DrMundo"
         else:
             return name
     def getSkin(self, name):
