@@ -38,7 +38,7 @@ class CreateThumbnail:
         elif (name == "NunuWillump"):
             return "Nunu"
         elif (name == "BelVeth"):
-            return "Belveth"
+            return "bel-veth"
         elif (name == "RenataGlasc"):
             return "Renata"
         elif (name == "TwistedFate"):
@@ -55,8 +55,6 @@ class CreateThumbnail:
             return "jarvan-iv"
         elif (name == "MasterYi"):
             return "Master-yi"
-        elif (name == "Dr.Mundo"):
-            return "dr-mundo"
         elif (name == "Dr.Mundo"):
             return "dr-mundo"
         else:
