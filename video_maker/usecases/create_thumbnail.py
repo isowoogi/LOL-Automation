@@ -57,6 +57,8 @@ class CreateThumbnail:
             return "Master-yi"
         elif (name == "Dr.Mundo"):
             return "dr-mundo"
+        elif (name == "Dr.Mundo"):
+            return "dr-mundo"
         else:
             return name
 
