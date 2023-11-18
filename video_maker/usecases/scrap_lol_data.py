@@ -1,6 +1,6 @@
 import json
 import os
-from time import sleep
+from time import sleepn
 from selenium.webdriver.common.by import By
 from entities.data_scrapper import DataScrapper
 from entities.match_data import MatchData, Player
@@ -15,7 +15,7 @@ class ScrapLolData(DataScrapper):
         # URL
         print_progress(0, self.total, prefix='Scraping Gameplay :')
         self.__replay_file_dir = os.path.abspath(r'.\media\replays')
-        self.__url = 'https://www.leagueofgraphs.com/replays/all/kr/challenger/medium/sr-ranked'
+        self.__url = 'https://www.leagueofgraphs.com/replays/all/kr/grandmaster/medium/sr-ranked'
 
         self.__champions_xpath_selector = '//*[contains(concat( " ", @class, " " ), concat( " ", "relative", " " ))]//img'
         self.__match_table_selector = '//*[contains(concat( " ", @class, " " ), concat( " ", "matchTable", " " ))]'
