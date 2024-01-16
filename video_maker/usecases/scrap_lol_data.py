@@ -1,6 +1,6 @@
 import json
 import os
-from time import sleepn
+from time import sleep
 from selenium.webdriver.common.by import By
 from entities.data_scrapper import DataScrapper
 from entities.match_data import MatchData, Player
