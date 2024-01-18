@@ -63,6 +63,12 @@ class CreateThumbnail:
             return "xin-zhao"
         elif (name == "TahmKench"):
             return "tahm-kench"
+        elif (name == "MissFortune"):
+            return "miss-fortune"
+        elif (name == "Hwei"):
+            return "hwei"
+        elif (name == "Irelia"):
+            return "irelia"
         else:
             return name
 
@@ -89,6 +95,10 @@ class CreateThumbnail:
             return "XinZhao"
         elif (name == "TahmKench"):
             return "TahmKench"
+        elif (name == "MissFortune"):
+            return "MissFortune"
+        elif (name == "Hwei"):
+            return "Hwei"
         else:
             return name
     def getSkin(self, name):
