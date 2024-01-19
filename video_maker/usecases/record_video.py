@@ -22,7 +22,7 @@ class RecordVideo:
         sleep(5)
         self.__run_game()
         
-        for i in range(45):
+        for i in range(35):
             sleep(1)
             print_progress(i, self.total, prefix='Gameplay recording:')
 
@@ -35,16 +35,7 @@ class RecordVideo:
 
         # Click on the center of the screen
         pydirectinput.click(center_x, center_y)
-        pydirectinput.keyDown('n')
-        pydirectinput.keyUp('n')
-        sleep(1)
-        print_progress(50, self.total, prefix='Gameplay recording:')
-        pydirectinput.keyDown('o')
-        pydirectinput.keyUp('o')
-        sleep(1)
-        print_progress(51, self.total, prefix='Gameplay recording:')
-        pydirectinput.keyDown('u')
-        pydirectinput.keyUp('u')
+        
         sleep(5)
         print_progress(56, self.total, prefix='Gameplay recording:')
         # select champion
