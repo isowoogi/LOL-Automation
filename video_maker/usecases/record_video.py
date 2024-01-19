@@ -22,7 +22,7 @@ class RecordVideo:
         sleep(5)
         self.__run_game()
         
-        for i in range(45):
+        for i in range(25):
             sleep(1)
             print_progress(i, self.total, prefix='Gameplay recording:')
 
