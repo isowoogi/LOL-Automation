@@ -102,7 +102,7 @@ class CreateThumbnail:
         elif (name == "Hwei"):
             return "Hwei"
         elif (name == "Smolder"):
-            return "Smolder"
+            return "smolder"
         else:
             return name
     def getSkin(self, name):
