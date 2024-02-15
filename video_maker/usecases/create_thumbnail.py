@@ -22,6 +22,7 @@ class CreateThumbnail:
         print_progress(1, self.total, prefix='Creating Thumbnail:')
         self.skins ={
             "Yuumi":[0,1,11,19,28,37,39],
+            "Akshan":[0,1,10,20],
         }
     def exceptionHandle(self,name):
         # print(name)
