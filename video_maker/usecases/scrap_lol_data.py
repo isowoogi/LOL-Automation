@@ -15,7 +15,7 @@ class ScrapLolData(DataScrapper):
         # URL
         print_progress(0, self.total, prefix='Scraping Gameplay :')
         self.__replay_file_dir = os.path.abspath(r'.\media\replays')
-        self.__url = 'https://www.leagueofgraphs.com/replays/all/kr/master/medium/sr-ranked'
+        self.__url = 'https://www.leagueofgraphs.com/replays/all/grandmaster/sr-ranked'
         self.__champions_xpath_selector = '//*[contains(concat( " ", @class, " " ), concat( " ", "relative", " " ))]//img'
         self.__match_table_selector = '//*[contains(concat( " ", @class, " " ), concat( " ", "matchTable", " " ))]'
         self.__region_xpath = '//*[(@id = "mainContent")]//a'
