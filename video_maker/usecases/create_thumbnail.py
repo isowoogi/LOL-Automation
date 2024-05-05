@@ -73,6 +73,8 @@ class CreateThumbnail:
             return "irelia"
         elif (name == "Smolder"):
             return "smolder"
+        elif (name == "ChoGath"):
+            return "cho-gath"
         else:
             return name
 
@@ -105,6 +107,8 @@ class CreateThumbnail:
             return "Hwei"
         elif (name == "Smolder"):
             return "Smolder"
+        elif (name == "ChoGath"):
+            return "Chogath"
         else:
             return name
     def getSkin(self, name):
