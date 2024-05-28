@@ -75,6 +75,10 @@ class CreateThumbnail:
             return "smolder"
         elif (name == "ChoGath"):
             return "cho-gath"
+        elif (name == "Jhin"):
+            return "jhin"
+        elif (name == "Nidalee"):
+            return "nidalee"
         else:
             return name
 
