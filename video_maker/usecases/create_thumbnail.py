@@ -26,9 +26,7 @@ class CreateThumbnail:
             "Milio":[0,1],
         }
     def exceptionHandle(self,name):
-        # print(name)
-        # if(name == "Wukong"):
-        #     return "MonkeyKing"
+        name = name.lower()
         if(name == "AurelionSol"):
             return "aurelion-sol"
         elif (name == "KaiSa"):
@@ -79,8 +77,8 @@ class CreateThumbnail:
             return "jhin"
         elif (name == "Nidalee"):
             return "nidalee"
-        elif (name == "Orianna"):
-            return "orianna"
+        elif (name == "Nidalee"):
+            return "nidalee"
         else:
             return name
 
@@ -132,6 +130,18 @@ class CreateThumbnail:
         filtered_urls = [skinUrl for skinUrl in skinsUrls if skinUrl is not None and "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/" in skinUrl]
 
         return filtered_urls
+    def all_champion(self):
+        champions = []
+        for player in self.lol_data['team1']['players']:
+            champions.append(player['champion'])
+        for player in self.lol_data['team2']['players']:
+            champions.append(player['champion'])
+
+        selection = champions.index(self.lol_data['mvp']['champion'])
+
+        positionLOL = ['TOP',"JUG","MID","ADC","SUP"][selection%5]
+
+        return positionLOL
     
     def create_thumbnail(self):
         print_progress(5, self.total, prefix='Creating Thumbnail:')
@@ -149,6 +159,7 @@ class CreateThumbnail:
         # if champion=="KaiSa":
         #     champion=="Kaisa"
         rank=self.lol_data['mvp']['rank']
+        positionLOL = self.all_champion()
         ranks= {
             "Iron": "https://lolg-cdn.porofessor.gg/img/s/league-icons-v3/160/1.png",
             "Bronze": "https://lolg-cdn.porofessor.gg/img/s/league-icons-v3/160/2.png",
@@ -195,6 +206,8 @@ class CreateThumbnail:
 
         print_progress(40, self.total, prefix='Creating Thumbnail:')
         oppIconImg = self.iconReplace(championTemp.replace(" ",""))
+        loserIcon = self.iconReplace(loser.replace(" ",""))
+        loser = self.lol_data['loser']
         self.__create_html(
             kda=self.lol_data['mvp']['kda'].split("/"),
             imgUrl=imgUrl,
@@ -205,7 +218,9 @@ class CreateThumbnail:
             rankIcon=rankIcon,
             spellImg=spellImg,
             opponentIcon=f'https://opgg-static.akamaized.net/meta/images/lol/champion/{oppIconImg}.png',
-            region=region
+            loserIcon=f'https://opgg-static.akamaized.net/meta/images/lol/champion/{loserIcon}.png',
+            region=region,
+            positionLOL = positionLOL
         )
         print_progress(50, self.total, prefix='Creating Thumbnail:')
         html_path = os.path.abspath('assets/thumbnail.html')
@@ -228,7 +243,7 @@ class CreateThumbnail:
         self.scrapper.driver.quit()
         return True
 
-    def __create_html(self, kda: str, mvp: str, vs: str, rank: str, patch: str, imgUrl: str,rankIcon:str,spellImg:list,opponentIcon:str,region):
+    def __create_html(self, kda: str, mvp: str, vs: str, rank: str, patch: str, imgUrl: str,rankIcon:str,spellImg:list,opponentIcon:str,loserIcon,region, positionLOL):
         none_vars = []
         if kda is None:
             none_vars.append('kda')
@@ -392,6 +407,27 @@ class CreateThumbnail:
                 position: absolute;
                 bottom: 31px;
             }
+            .banner{
+                width: 544px;
+                height: 150px;
+                background-color: rgba(0, 0, 0, 0.6);
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                margin: 120px;
+                bottom: 25px;
+                margin-bottom: -398px;
+            }
+            .position {
+                color: wheat;
+                font-size: 125px;
+                font-family: emoji;
+                font-weight: 600;
+                padding: 10px;}
+            .banner .players1{
+                width: 125px;
+                height: 125px;
+            }
     </style>
 </head>
 <body>
@@ -426,7 +462,11 @@ class CreateThumbnail:
         <div class="patch">
             <p>"""+patch+"""</p>
         </div>
-
+        <div class='banner'>
+            <span class='position'>"""+positionLOL+"""</span>
+            <span><img width='100px' src="./vs.png" /></span>
+            <span><img class="players1" src='"""+loserIcon+"""'/></span>
+        </div>
 
     </div>
 </body>
