@@ -82,7 +82,9 @@ class CreateThumbnail:
         else:
             return name
 
-    def iconReplace(self, name):
+    def iconReplace(self,champion):
+        name = champion.replace(" ","")
+        name = name.replace("'","")
         if (name == "KaiSa"):
             return "Kaisa"
         elif (name == "VelKoz"):
@@ -101,18 +103,6 @@ class CreateThumbnail:
             return "MonkeyKing"
         elif (name == "Dr.Mundo"):
             return "DrMundo"
-        elif (name == "XinZhao"):
-            return "XinZhao"
-        elif (name == "TahmKench"):
-            return "TahmKench"
-        elif (name == "MissFortune"):
-            return "MissFortune"
-        elif (name == "Hwei"):
-            return "Hwei"
-        elif (name == "Smolder"):
-            return "Smolder"
-        elif (name == "ChoGath"):
-            return "Chogath"
         else:
             return name
     def getSkin(self, name):
@@ -153,7 +143,7 @@ class CreateThumbnail:
         champion = champion.replace(" ", "")
         # champion = self.lol_data['mvp']['champion']
         # print(champion)
-        championTemp = champion
+        championTemp = self.lol_data['mvp']['champion']
         champion = self.exceptionHandle(champion)
         print_progress(8, self.total, prefix='Creating Thumbnail:')
         # if champion=="KaiSa":
@@ -205,8 +195,10 @@ class CreateThumbnail:
         imgUrl=random.choice(skins)
 
         print_progress(40, self.total, prefix='Creating Thumbnail:')
-        oppIconImg = self.iconReplace(championTemp.replace(" ",""))
-        loserIcon = self.iconReplace(loser.replace(" ",""))
+        # print("Champion:" + championTemp)
+        oppIconImg = self.iconReplace(championTemp)
+        # print("Champion Img:" + oppIconImg)
+        loserIcon = self.iconReplace(loser)
         loser = self.lol_data['loser']
         self.__create_html(
             kda=self.lol_data['mvp']['kda'].split("/"),
@@ -217,8 +209,8 @@ class CreateThumbnail:
             patch=self.lol_data['patch'],
             rankIcon=rankIcon,
             spellImg=spellImg,
-            opponentIcon=f'https://opgg-static.akamaized.net/meta/images/lol/champion/{oppIconImg}.png',
-            loserIcon=f'https://opgg-static.akamaized.net/meta/images/lol/champion/{loserIcon}.png',
+            opponentIcon=f'https://opgg-static.akamaized.net/meta/images/lol/14.11.1/champion/{oppIconImg}.png',
+            loserIcon=f'https://opgg-static.akamaized.net/meta/images/lol/14.11.1/champion/{loserIcon}.png',
             region=region,
             positionLOL = positionLOL
         )
