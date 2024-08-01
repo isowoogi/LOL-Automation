@@ -79,6 +79,8 @@ class CreateThumbnail:
             return "nidalee"
         elif (name == "Nidalee"):
             return "nidalee"
+        elif (name == "RekSai"):
+            return "reksai"
         else:
             return name
 
