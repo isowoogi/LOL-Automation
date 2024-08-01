@@ -45,6 +45,8 @@ class CreateThumbnail:
             return "Twisted-fate"
         elif (name == "LeeSin"):
             return "lee-sin"
+        elif (name == "RekSai"):
+            return "rek-sai"
         elif (name == "KSante"):
             return "k-sante"
         elif (name == "KogMaw"):
