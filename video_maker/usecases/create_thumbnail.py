@@ -97,6 +97,8 @@ class CreateThumbnail:
             return "Belveth"
         elif (name == "RenataGlasc"):
             return "Renata"
+        elif (name == "RekSai"):
+            return "RekSai"
         elif (name == "Wukong"):
             return "MonkeyKing"
         elif (name == "Dr.Mundo"):
