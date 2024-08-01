@@ -80,7 +80,7 @@ class CreateThumbnail:
         elif (name == "Nidalee"):
             return "nidalee"
         elif (name == "Reksai"):
-            return "reksai"
+            return "rek-sai"
         else:
             return name
 
