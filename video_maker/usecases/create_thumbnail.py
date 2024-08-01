@@ -45,8 +45,6 @@ class CreateThumbnail:
             return "Twisted-fate"
         elif (name == "LeeSin"):
             return "lee-sin"
-        elif (name == "RekSai"):
-            return "rek-sai"
         elif (name == "KSante"):
             return "k-sante"
         elif (name == "KogMaw"):
@@ -79,8 +77,6 @@ class CreateThumbnail:
             return "nidalee"
         elif (name == "Nidalee"):
             return "nidalee"
-        elif (name == "Reksai"):
-            return "rek-sai"
         else:
             return name
 
@@ -99,10 +95,6 @@ class CreateThumbnail:
             return "Belveth"
         elif (name == "RenataGlasc"):
             return "Renata"
-        elif (name == "RekSai"):
-            return "RekSai"
-        elif (name == "RekSai"):
-            return "Reksai"
         elif (name == "Wukong"):
             return "MonkeyKing"
         elif (name == "Dr.Mundo"):
