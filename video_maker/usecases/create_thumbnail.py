@@ -1,3 +1,4 @@
+from datetime import datetime
 from io import BytesIO
 from PIL import Image
 import os
@@ -17,7 +18,8 @@ class CreateThumbnail:
         self.__thumb_path = os.path.abspath(r'.\media\thumb\thumb.png')
         self.__replay_file_dir = os.path.abspath(r'.\media\replays')
         file = os.listdir(self.__replay_file_dir)[0].split(".")[0]
-        self.__static_thumb_path = os.path.join(os.path.abspath(r'.\media\AllThumbs'),f'{file}.png')
+        current_time = datetime.now().strftime('%Y%m%d_%H%M%S')
+        self.__static_thumb_path = os.path.join(os.path.abspath(r'.\media\AllThumbs'),f'{file}_{current_time}.png')
         self.total=100
         print_progress(1, self.total, prefix='Creating Thumbnail:')
         self.skins ={
