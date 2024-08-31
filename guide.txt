@@ -2,3 +2,8 @@ cd D:\fiver\Doing video-maker-main\venv\Scripts && activate && cd ..\..\video-ma
 
 change the file folder
 "%APPDATA%\LoG_lolinstallpath.txt"
+
+
+https://lolimo.net/archives/5098431728/urlscheme
+
+cd /d "C:\Riot Games\League of Legends\Game" & "League of Legends.exe" "spectator lolimo.net:3000 pm3ZD/XvXySqkvWUg7MNnitE66GHtsOi 7097259618 EUW1" "-UseRads"

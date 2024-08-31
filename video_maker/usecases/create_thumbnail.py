@@ -150,7 +150,7 @@ class CreateThumbnail:
         champion = champion.replace("&","")
         if(len(champion.split())==1):
             champion = champion.capitalize()
-        champion = champion.replace(" ", "")
+        # champion = champion.replace(" ", "")
         # champion = self.lol_data['mvp']['champion']
         # print(champion)
         championTemp = champion
@@ -185,6 +185,8 @@ class CreateThumbnail:
         print_progress(25, self.total, prefix='Creating Thumbnail:')
         
         loser=self.lol_data['loser']
+        if(len(loser.split())==1):
+            loser = loser.capitalize()
         imgUrl=""
         count=0
         # print(champion)
@@ -207,6 +209,8 @@ class CreateThumbnail:
         print_progress(40, self.total, prefix='Creating Thumbnail:')
         oppIconImg = self.iconReplace(championTemp.replace(" ",""))
         loserIcon = self.iconReplace(loser.replace(" ",""))
+        # print("Opp icon: ",f'https://opgg-static.akamaized.net/meta/images/lol/latest/champion/{oppIconImg}.png')
+        # print("Los icon: ",f'https://opgg-static.akamaized.net/meta/images/lol/latest/champion/{loserIcon}.png')
         loser = self.lol_data['loser']
         self.__create_html(
             kda=self.lol_data['mvp']['kda'].split("/"),
@@ -217,8 +221,8 @@ class CreateThumbnail:
             patch=self.lol_data['patch'],
             rankIcon=rankIcon,
             spellImg=spellImg,
-            opponentIcon=f'https://opgg-static.akamaized.net/meta/images/lol/champion/{oppIconImg}.png',
-            loserIcon=f'https://opgg-static.akamaized.net/meta/images/lol/champion/{loserIcon}.png',
+            opponentIcon=f'https://opgg-static.akamaized.net/meta/images/lol/latest/champion/{oppIconImg}.png',
+            loserIcon=f'https://opgg-static.akamaized.net/meta/images/lol/latest/champion/{loserIcon}.png',
             region=region,
             positionLOL = positionLOL
         )

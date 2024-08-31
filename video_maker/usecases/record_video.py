@@ -99,7 +99,10 @@ class RecordVideo:
 
     def __run_game(self):
         file = os.listdir(self.__replay_file_dir)[0]
-        subprocess.run(["start", "cmd", "/c", f"{self.__replay_file_dir}\{file}"], shell=True)
+        file_path = os.path.abspath(os.path.join(self.__replay_file_dir,file))
+        command =  open(file_path, 'r').read()
+        subprocess.Popen( command, shell=True)
+        # subprocess.run(["start", "cmd", "/c", f"{self.__replay_file_dir}\{file}"], shell=True)
 
     def __run_obs(self):
         pyautogui.hotkey('super', '1')
