@@ -140,7 +140,7 @@ class CreateThumbnail:
         champion = champion.replace("&","")
         if(len(champion.split())==1):
             champion = champion.capitalize()
-        champion = champion.replace(" ", "")
+        # champion = champion.replace(" ", "")
         # champion = self.lol_data['mvp']['champion']
         # print(champion)
         championTemp = self.lol_data['mvp']['champion']
@@ -175,6 +175,8 @@ class CreateThumbnail:
         print_progress(25, self.total, prefix='Creating Thumbnail:')
         
         loser=self.lol_data['loser']
+        if(len(loser.split())==1):
+            loser = loser.capitalize()
         imgUrl=""
         count=0
         # print(champion)
@@ -195,10 +197,10 @@ class CreateThumbnail:
         imgUrl=random.choice(skins)
 
         print_progress(40, self.total, prefix='Creating Thumbnail:')
-        # print("Champion:" + championTemp)
-        oppIconImg = self.iconReplace(championTemp)
-        # print("Champion Img:" + oppIconImg)
-        loserIcon = self.iconReplace(loser)
+        oppIconImg = self.iconReplace(championTemp.replace(" ",""))
+        loserIcon = self.iconReplace(loser.replace(" ",""))
+        # print("Opp icon: ",f'https://opgg-static.akamaized.net/meta/images/lol/latest/champion/{oppIconImg}.png')
+        # print("Los icon: ",f'https://opgg-static.akamaized.net/meta/images/lol/latest/champion/{loserIcon}.png')
         loser = self.lol_data['loser']
         self.__create_html(
             kda=self.lol_data['mvp']['kda'].split("/"),
@@ -209,8 +211,8 @@ class CreateThumbnail:
             patch=self.lol_data['patch'],
             rankIcon=rankIcon,
             spellImg=spellImg,
-            opponentIcon=f'https://opgg-static.akamaized.net/meta/images/lol/14.11.1/champion/{oppIconImg}.png',
-            loserIcon=f'https://opgg-static.akamaized.net/meta/images/lol/14.11.1/champion/{loserIcon}.png',
+            opponentIcon=f'https://opgg-static.akamaized.net/meta/images/lol/latest/champion/{oppIconImg}.png',
+            loserIcon=f'https://opgg-static.akamaized.net/meta/images/lol/latest/champion/{loserIcon}.png',
             region=region,
             positionLOL = positionLOL
         )

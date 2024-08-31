@@ -1,6 +1,9 @@
+from urllib.parse import urlparse, parse_qs
+
 import json
 import os
 from time import sleep
+import requests
 from selenium.webdriver.common.by import By
 from entities.data_scrapper import DataScrapper
 from entities.match_data import MatchData, Player
@@ -19,7 +22,7 @@ class ScrapLolData(DataScrapper):
         self.__champions_xpath_selector = '//*[contains(concat( " ", @class, " " ), concat( " ", "relative", " " ))]//img'
         self.__match_table_selector = '//*[contains(concat( " ", @class, " " ), concat( " ", "matchTable", " " ))]'
         self.__region_xpath = '//*[(@id = "mainContent")]//a'
-        self.__watch_xpath = '//*[contains(concat( " ", @class, " " ), concat( " ", "replay_watch_button", " " ))]'
+        self.__watch_xpath = '//button[@class="replay_watch_button_twitch"]'
         self.__download_xpath = '//*[contains(concat( " ", @class, " " ), concat( " ", "replayDownloadButton", " " ))]'
         self.match_data: MatchData = {
             "team1": {
@@ -312,6 +315,27 @@ class ScrapLolData(DataScrapper):
         }
 
     def __download_match(self):
+        game_id_tag = self.driver.find_element(by=By.XPATH, value='//*[@id="mainContent"]/div[1]/table/tbody/tr[1]/th[1]/a')
+        game_id = game_id_tag.get_attribute("href").split("/")[-1]
+        url = f"https://lolimo.net/archives/{game_id}/urlscheme"
+        response = requests.get(url)
+        endpoint = response.text
+        parsed_url = urlparse(endpoint)
+        params = parse_qs(parsed_url.query)
+
+        # print(params)
+        server = params.get('server')[0]
+        observer = params.get('observer')[0]
+        platform = params.get('platform')[0]
+        
+        command = f"""cd /d "C:\Riot Games\League of Legends\Game" & "League of Legends.exe" "spectator {server} {observer} {game_id} {platform}" "-UseRads" """
+        
+        file_path = os.path.join(self.__replay_file_dir, "gameplay.cmd")
+
+        # Write the command to the file
+        with open(file_path, 'w') as file:
+            file.write(command)
+        return
         watch_button = self.driver.find_element(
             by=By.XPATH, value=self.__watch_xpath)
         download_button = self.driver.find_element(
