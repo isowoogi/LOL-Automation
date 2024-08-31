@@ -6,4 +6,8 @@ change the file folder
 
 https://lolimo.net/archives/5098431728/urlscheme
 
-cd /d "C:\Riot Games\League of Legends\Game" & "League of Legends.exe" "spectator lolimo.net:3000 pm3ZD/XvXySqkvWUg7MNnitE66GHtsOi 7097259618 EUW1" "-UseRads"
+cd /d "C:\Riot Games\League of Legends\Game" & "League of Legends.exe" "spectator lolimo.net:3000 u1duqrgRLpWgLOaYVUHtLAK8F2AEOe7V 7098757107 EUW1" "-UseRads"
+
+
+lolimo://?path=C%3A%5CRiot%20Games%5CLeague%20of%20Legends%5CGame&server=lolimo.net%3A3000&observer=u1duqrgRLpWgLOaYVUHtLAK8F2AEOe7V&game_id=7098757107&platform=EUW1
+lolimo://?path=C%3A%5CRiot%20Games%5CLeague%20of%20Legends%5CGame&server=lolimo.net%3A3000&observer=%2BFYHUMNkmseF6SpXMyHkmCokushu3JGr&game_id=5098431728&platform=NA1

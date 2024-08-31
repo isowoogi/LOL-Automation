@@ -1,6 +1,6 @@
 @echo off
-IF EXIST "LOL-automate-youtube" (
-  cd LOL-automate-youtube
+IF EXIST "LOL-Automation" (
+  cd LOL-Automation
   git add .> log.txt 2>&1
   git commit -m "updated" > log.txt 2>&1
   git push > log.txt 2>&1
@@ -8,7 +8,7 @@ IF EXIST "LOL-automate-youtube" (
 ) ELSE (    
     echo "== Installing set up=="
   git clone https://github.com/isowoogi/LOL-Automation.git > log.txt 2>&1
-  cd LOL-automate-youtube
+  cd LOL-Automation
 )
 if not exist venv (
     echo "    * Creating environment=="
