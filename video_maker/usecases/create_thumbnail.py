@@ -82,7 +82,9 @@ class CreateThumbnail:
         else:
             return name
 
-    def iconReplace(self, name):
+    def iconReplace(self,champion):
+        name = champion.replace(" ","")
+        name = name.replace("'","")
         if (name == "KaiSa"):
             return "Kaisa"
         elif (name == "VelKoz"):
@@ -101,18 +103,6 @@ class CreateThumbnail:
             return "MonkeyKing"
         elif (name == "Dr.Mundo"):
             return "DrMundo"
-        elif (name == "XinZhao"):
-            return "XinZhao"
-        elif (name == "TahmKench"):
-            return "TahmKench"
-        elif (name == "MissFortune"):
-            return "MissFortune"
-        elif (name == "Hwei"):
-            return "Hwei"
-        elif (name == "Smolder"):
-            return "Smolder"
-        elif (name == "ChoGath"):
-            return "Chogath"
         else:
             return name
     def getSkin(self, name):
@@ -153,7 +143,7 @@ class CreateThumbnail:
         # champion = champion.replace(" ", "")
         # champion = self.lol_data['mvp']['champion']
         # print(champion)
-        championTemp = champion
+        championTemp = self.lol_data['mvp']['champion']
         champion = self.exceptionHandle(champion)
         print_progress(8, self.total, prefix='Creating Thumbnail:')
         # if champion=="KaiSa":
