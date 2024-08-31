@@ -328,7 +328,7 @@ class ScrapLolData(DataScrapper):
         observer = params.get('observer')[0]
         platform = params.get('platform')[0]
         
-        command = f"""cd /d "C:\Riot Games\League of Legends\Game" & "League of Legends.exe" "spectator {server} {observer} {game_id} {platform}" "-UseRads" """
+        command = f"{endpoint}"
         
         file_path = os.path.join(self.__replay_file_dir, "gameplay.cmd")
 

@@ -5,7 +5,7 @@ import pyautogui
 import pydirectinput
 from entities.match_data import MatchData
 from entities.progress import print_progress
-
+import webbrowser
 
 class RecordVideo:
     def __init__(self, match_data: MatchData) -> None:
@@ -101,7 +101,9 @@ class RecordVideo:
         file = os.listdir(self.__replay_file_dir)[0]
         file_path = os.path.abspath(os.path.join(self.__replay_file_dir,file))
         command =  open(file_path, 'r').read()
-        subprocess.Popen( command, shell=True)
+        webbrowser.open(command)
+        # subprocess.Popen( command, shell=True)
+        
         # subprocess.run(["start", "cmd", "/c", f"{self.__replay_file_dir}\{file}"], shell=True)
 
     def __run_obs(self):
