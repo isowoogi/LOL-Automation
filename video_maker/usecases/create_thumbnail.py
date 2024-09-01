@@ -31,8 +31,8 @@ class CreateThumbnail:
         name = name.lower()
         if(name == "AurelionSol"):
             return "aurelion-sol"
-        elif (name == "KaiSa"):
-            return "Kai-sa"
+        # elif (name == "KaiSa"):
+        #     return "Kaisa"
         elif (name == "VelKoz"):
             return "vel-koz"
         elif (name == "KhaZix"):
@@ -134,12 +134,18 @@ class CreateThumbnail:
         positionLOL = ['TOP',"JUG","MID","ADC","SUP"][selection%5]
 
         return positionLOL
+    def change_champion_name(self,champion):
+        champion = champion.replace("'", "-")
+        champion = champion.replace(".", "")
+        champion = champion.replace(" ", "-")
+        champion = champion.replace("&", "")
+        champion = champion.lower()
+        return champion
     
     def create_thumbnail(self):
         print_progress(5, self.total, prefix='Creating Thumbnail:')
         champion = self.lol_data['mvp']['champion']
-        champion = champion.replace("'", "& ")
-        champion = champion.replace("&","")
+        champion = self.change_champion_name(champion)
         if(len(champion.split())==1):
             champion = champion.capitalize()
         # champion = champion.replace(" ", "")
